@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Testing onMessage on Orion",
+  "version": "1.0",
+  "description": "A minimal example of ",
+  "action": {
+    "default_title": "Just an example",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "bookmarks",
+    "history",
+    "storage",
+    "sessions",
+    "notifications",
+    "scripting",
+    "favicon",
+    "webNavigation",
+    "search"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}
